@@ -165,70 +165,106 @@ body {
 }
 
 /* 2. Content ================================= */
-.floating-box {
+.banner-container {
+	width: 300px;
+	height: 250px;
+	overflow: hidden;
 	position: relative;
-	font-family: sans-serif;
-	width: 90%;
-	max-width: 500px;
-	margin: 140px auto;
-	padding: 30px 20px 30px 30px;
+	background: linear-gradient(-45deg, #fff, #000, #000);
+	border: 1px #777 solid;
+	background-size: 400% 400%;
+	-webkit-animation: starGradient 42s ease infinite;
+	        animation: starGradient 42s ease infinite;
 }
-.floating-box .foreground {
-	position: relative;
-	z-index: 2;
-	transform: translateZ(100px);
-}
-.floating-box .background {
-	position: absolute;
-	width: 100%;
+.banner-container .banner-bkg {
+	background: url(../../dist/img/bannerpng.jpg);
+	opacity: 90%;
+	background-size: cover;
 	height: 100%;
-	left: 0;
-	top: 0;
-	background: white;
-	z-index: 1;
-	transition: 0.2s;
-	transform: translateX(20px) perspective(600px) rotateY(15deg);
+	width: 100%;
+	color: #fff;
+	text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+	text-align: center;
+	font-size: 0px;
 }
-.floating-box:hover .background {
-	transform: translateX(-30px) perspective(600px) rotateY(-15deg);
-}
-.floating-box .logo {
+.banner-container .planet {
+	width: 200px;
+	height: 200px;
+	border-radius: 50%;
+	-webkit-animation: starGradient 15s ease infinite;
+	        animation: starGradient 15s ease infinite;
+	background-size: 400% 400%;
 	position: absolute;
-	top: -30px;
-	width: 60px;
-	z-index: 2;
-	transform: translateZ(100px);
-	transition: 0.3s;
+	box-shadow: 0px 0px 50px rgba(255, 255, 255, 0.659);
+	-webkit-animation: planetGlow 13s ease-in-out infinite;
+	        animation: planetGlow 13s ease-in-out infinite;
 }
-.floating-box .logo:hover {
-	-ms-transform: rotate(-0.4turn);
-	    transform: rotate(-0.4turn);
+.banner-container .planet1 {
+	background: linear-gradient(-45deg, #ff6600, #a5512a, #ff1100);
+	-webkit-transform: translate(-90px, 32px);
+	        transform: translate(-90px, 32px);
 }
-.floating-box h1 {
-	font-weight: 700;
-	font-size: 22pt;
-	margin: 15px 0;
+.banner-container .planet2 {
+	background: linear-gradient(-45deg, #0066ff, #00f7ff, #008053);
+	-webkit-transform: translate(175px, -33px);
+	        transform: translate(175px, -33px);
 }
-.floating-box p {
-	color: #777;
-	line-height: 140%;
-}
-.floating-box p.github {
-	font-size: 0.8em;
-}
-.floating-box p.github a {
-	opacity: 0.2;
-	transition: 0.3s;
-}
-.floating-box p.github a:hover {
-	opacity: 1;
-	color: red;
-}
-.floating-box code {
+.banner-container .spaceship {
+	width: 60%;
+	height: 60%;
+	background: url(../../dist/img/shipsprite.png);
+	background-size: 400% 280%;
 	position: absolute;
-	top: 20px;
-	right: 20px;
-	font-size: 0.8em;
-	opacity: 0.2;
+	-webkit-transform: translate(73px, -20px) rotateX(42deg);
+	        transform: translate(73px, -20px) rotateX(42deg);
+}
+.banner-container .courier {
+	background-position: 100% 173%;
+}
+
+@-webkit-keyframes starGradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+@keyframes starGradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+@-webkit-keyframes planetGlow {
+	0% {
+		box-shadow: 0px 0px 50px rgba(255, 255, 255, 0.659);
+	}
+	50% {
+		box-shadow: 0px 0px 50px rgba(255, 255, 255, 0.405);
+	}
+	100% {
+		box-shadow: 0px 0px 50px rgba(255, 255, 255, 0.659);
+	}
+}
+@keyframes planetGlow {
+	0% {
+		box-shadow: 0px 0px 50px rgba(255, 255, 255, 0.659);
+	}
+	50% {
+		box-shadow: 0px 0px 50px rgba(255, 255, 255, 0.405);
+	}
+	100% {
+		box-shadow: 0px 0px 50px rgba(255, 255, 255, 0.659);
+	}
 }
 /*# sourceMappingURL=main.css.map */
